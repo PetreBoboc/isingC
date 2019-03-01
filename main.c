@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     fclose(lat1);
 
     double deltaE = 0; // deltaE
-    double mag = 0; // magnetization
+    double mag = 0.0; // magnetization
 
     double R = 0;
     double z = 0;
@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
 
     while ( tStart > tStop )
     {
+
         mag = 0;
 
         for(ath = 0; ath < 256*n; ath++)
@@ -93,17 +94,15 @@ int main(int argc, char *argv[])
             for(i = 0; i < n; i++)
             for(j = 0; j < n; j++)
             {
-                mag = mag + spin[ii][jj];
+                mag = mag + spin[i][j];
             }
 
         }
 
-        mag = (double)mag / (double)(256*n);
+        mag = mag / (256*n);
 
-        fprintf(x,"%f\n",tStart);
-        fprintf(y,"%f\n",mag);
-
-        mag = 0;
+        fprintf(x,"%f \n",tStart);
+        fprintf(y,"%f \n",mag);
 
         precentage = (tStart - 0.1) / (10 - 0.1);
 
