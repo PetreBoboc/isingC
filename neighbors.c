@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "ising.h"
 
-using namespace std;
-
 double neighbors(int i, int j, int n, int** matrix, int border)
 {
 
