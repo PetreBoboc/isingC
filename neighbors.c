@@ -9,8 +9,8 @@ double neighbors(int i, int j, int n, int** matrix, int border)
 
     if (border == 1)
     {
-        if ( i-1 == -1) { up = n-1; } else { up = 0; }
-        if ( j-1 == -1) { left = n-1; } else { left = 0; }
+        if ( i-1 == -1) { up = n-1; } else { up = i-1; }
+        if ( j-1 == -1) { left = n-1; } else { left = j-1; }
         if ( i+1 == n) { down = 0; } else { down = i+1; }
         if ( j+1 == n) { right = 0; } else { right = j+1; }
 
